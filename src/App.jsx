@@ -1,0 +1,27 @@
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Blogs from "./pages/Blogs";
+import Services from "./pages/Services";
+import Contact from "./pages/Contact";
+import PageNotFound from "./pages/PageNotFound";
+import Navbar from "./components/Navbar";
+
+function App() {
+  return (
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/blogs" element={<Blogs />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/*" element={<PageNotFound />} />
+      </Routes>
+    </>
+  );
+}
+
+export default App;
