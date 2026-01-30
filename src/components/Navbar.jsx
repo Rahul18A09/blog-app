@@ -27,11 +27,23 @@ function Navbar() {
         <a href="/" className='text-xl font-bold text-white'>Design<span className='text-orange-500'>DK</span></a>
 
         {/* navItems for lg devices */}
-        <ul className='md:flex gap-12 text-lg hidden'>
-            {
-                navItems.map(({path, link}) => <li className='text-white' key={path}><NavLink to={path}>{link}</NavLink></li>)
-            }
-        </ul>
+        <ul className="md:flex gap-12 text-lg hidden">
+  {navItems.map(({ path, link }) => (
+    <li key={path}>
+      <NavLink
+        to={path}
+        className={({ isActive }) =>
+          isActive
+            ? "text-orange-500 font-semibold"
+            : "text-white"
+        }
+      >
+        {link}
+      </NavLink>
+    </li>
+  ))}
+</ul>
+
 
         {/* menu icons */}
 
