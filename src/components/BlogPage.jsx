@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import BlogCards from "./BlogCards";
 import Pagination from "./Pagination";
 import CategorySection from "./CategorySection";
+import SideBar from "./SideBar";
+import Footer from "./Footer";
 
 function BlogPage() {
   const [blogs, setBlogs] = useState([]);
@@ -42,30 +44,48 @@ function BlogPage() {
     setCurrentPage(1);
   };
 
+  useEffect(() => {
+    if (currentPage > totalPages) {
+      setCurrentPage(1);
+    }
+  }, [filteredBlogs, totalPages]);
 
   const categories = ["All", ...new Set(blogs.map((blog) => blog.category))];
 
   return (
-    <div className="p-6">
+    <div className="p-8 flex flex-wrap justify-evenly">
       {/* Category Section */}
-      <CategorySection
-        categories={categories}
-        selectedCategory={selectedCategory}
-        onCategoryChange={handleCategoryChange}
-      />
-
+      <div>
+        {" "}
+        <CategorySection
+          categories={categories}
+          selectedCategory={selectedCategory}
+          onCategoryChange={handleCategoryChange}
+        />
+      </div>
 
       {/* Blog Cards */}
-      <BlogCards blogs={paginatedBlogs} />
+      <div className="flex flex-col lg:flex-row gap-12">
+        <BlogCards blogs={paginatedBlogs} />
 
+        <div>
+          <SideBar />
+        </div>
+      </div>
 
       {/* Pagination */}
-      <Pagination
-        onPageChange={handlePageChange}
-        currentPage={currentPage}
-        totalItems={filteredBlogs.length}
-        pageSize={pageSize}
-      />
+      <div>
+        {totalPages > 1 && (
+          <Pagination
+            onPageChange={handlePageChange}
+            currentPage={currentPage}
+            totalItems={filteredBlogs.length}
+            pageSize={pageSize}
+          />
+        )}
+      </div>
+
+
     </div>
   );
 }

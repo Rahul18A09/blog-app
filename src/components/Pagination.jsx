@@ -3,7 +3,8 @@ import React from "react";
 const Pagination = ({ onPageChange, currentPage, totalItems, pageSize }) => {
   const totalPages = Math.ceil(totalItems / pageSize);
 
-  if (totalPages <= 1) return null;
+//   if (totalPages <= 1) return null;
+if (totalPages === 0) return null;
 
   const handlePrevious = () => {
     if (currentPage > 1) {

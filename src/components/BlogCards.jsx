@@ -4,7 +4,11 @@ import { Link } from "react-router-dom";
 
 const BlogCards = ({ blogs }) => {
   return (
-    <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8">{blogs.length === 0 ? (<p>No blogs found.</p>) : (blogs.map((blog) => (
+    <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8">
+      {blogs.length === 0 ? (
+        <p>No blogs found.</p>
+      ) : (
+        blogs.map((blog) => (
           <Link
             to={`/blog/${blog.id}`}
             key={blog.id}
@@ -34,4 +38,5 @@ const BlogCards = ({ blogs }) => {
 };
 
 export default BlogCards;
+
 
