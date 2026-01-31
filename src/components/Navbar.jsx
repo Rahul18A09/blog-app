@@ -34,7 +34,7 @@ function Navbar() {
         to={path}
         className={({ isActive }) =>
           isActive
-            ? "text-orange-500 font-semibold"
+            ? "text-orange-500 font-semibold underline underline-offset-4"
             : "text-white"
         }
       >
