@@ -10,7 +10,7 @@ const BlogCards = ({ blogs }) => {
       ) : (
         blogs.map((blog) => (
           <Link
-            to={`/blog/${blog.id}`}
+            to={`/blogs/${blog.id}`}
             key={blog.id}
             className="p-5 shadow-lg rounded cursor-pointer hover:shadow-xl transition"
           >

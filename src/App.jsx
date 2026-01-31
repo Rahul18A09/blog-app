@@ -8,6 +8,9 @@ import Contact from "./pages/Contact";
 import PageNotFound from "./pages/PageNotFound";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import SingleBlog from "./components/SingleBlog";
+
+
 
 function App() {
   return (
@@ -19,11 +22,12 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/blogs/:id"  element={<SingleBlog/>}/>
         <Route path="/*" element={<PageNotFound />} />
       </Routes>
        <Footer/>
     </>
-  );
+  ); 
 }
 
 export default App;

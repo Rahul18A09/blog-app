@@ -3,7 +3,7 @@ import BlogCards from "./BlogCards";
 import Pagination from "./Pagination";
 import CategorySection from "./CategorySection";
 import SideBar from "./SideBar";
-import Footer from "./Footer";
+
 
 function BlogPage() {
   const [blogs, setBlogs] = useState([]);
