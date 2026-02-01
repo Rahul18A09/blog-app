@@ -6,9 +6,12 @@ import { FaXmark } from 'react-icons/fa6';
 
 
 
+
 function Navbar() {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
+
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -51,7 +54,14 @@ function Navbar() {
            <a href="/" className='hover:text-orange-500'><FaFacebook/></a>
            <a href="/" className='hover:text-orange-500'><FaDribbble/></a>
            <a href="/" className='hover:text-orange-500'><FaTwitter/></a>
-           <button className='bg-orange-500 px-6 py-2 font-medium rounded hover:bg-white hover:text-orange-500 transition-all duration-200 ease-in'>Log in</button>
+           {/* <button className='bg-orange-500 px-6 py-2 font-medium rounded hover:bg-white hover:text-orange-500 transition-all duration-200 ease-in'>Log in</button> */}
+           <button
+  onClick={() => setIsOpen(true)}
+  className="bg-orange-500 px-6 py-2 font-medium rounded hover:bg-white hover:text-orange-500 transition-all duration-200 ease-in"
+>
+  Log in
+</button>
+
         </div>
 
         {/* mobile menu btn, display on  mobile screen */}
@@ -67,6 +77,58 @@ function Navbar() {
             }
         </ul>
         </div>
+
+      {isOpen && (
+  <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+
+    {/* Modal Box */}
+    <div className="bg-white w-[90%] max-w-md p-8 rounded-2xl relative">
+
+      {/* Close Button */}
+      <button
+        onClick={() => setIsOpen(false)}
+        className="absolute top-4 right-4 text-gray-500 hover:text-black text-xl"
+      >
+        ✕
+      </button>
+
+      <h2 className="text-black font-bold mb-6 text-center">
+        Login to Your Account
+      </h2>
+
+      <form className="space-y-5">
+
+        <div>
+          <label className="text-orange-500 block mb-2 font-medium">Email</label>
+          <input
+            type="email"
+            placeholder="Enter your email"
+            className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-500"
+          />
+        </div>
+
+        <div>
+          <label className="text-orange-500 block mb-2 font-medium">Password</label>
+          <input
+            type="password"
+            placeholder="Enter your password"
+            className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-500"
+          />
+        </div>
+
+        <button
+          type="submit"
+          className="w-full bg-orange-500 text-white py-3 rounded-lg font-semibold hover:bg-orange-600 transition"
+        >
+          Login
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+)}
+
        
    
    </header>
