@@ -48,7 +48,7 @@ const SideBar = () => {
         {popularBlogs.map((blog) => (
           <Link
             key={blog.id}
-            to={`/blog/${blog.id}`}
+            to={`/blogs/${blog.id}`}
             className="flex gap-4 items-center hover:bg-gray-100 p-3 rounded-lg transition"
           >
             {/* Thumbnail */}
