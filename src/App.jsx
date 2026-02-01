@@ -15,7 +15,7 @@ import SingleBlog from "./components/SingleBlog";
 function App() {
   return (
     <>
-      <Navbar />
+      <Navbar/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<Services />} />

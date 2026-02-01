@@ -1,18 +1,46 @@
+// import React from "react";
+// import Banner from "../components/Banner";
+// import BlogPage from "../components/BlogPage";
+
+// function Home() {
+//   return (
+//     <div>
+//       <Banner/>
+
+//       <div className="max-w-7xl">
+//         <BlogPage/>
+//       </div>
+//     </div>
+//   )
+// }
+
+// export default Home;
+
 import React from "react";
 import Banner from "../components/Banner";
 import BlogPage from "../components/BlogPage";
 
-
 function Home() {
   return (
-    <div>
-      <Banner/>
+    <div className="bg-gray-50 mb-[-80px]">
+      {/* Hero Section */}
+      <section>
+        <Banner />
+      </section>
 
-      <div className="max-w-7xl">
-        <BlogPage/>
-      </div>
+      {/* Blog Section */}
+      <section className="max-w-7xl mx-auto px-6 py-16">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold">Latest Articles</h2>
+          <p className="text-gray-600 mt-3">
+            Explore our latest insights and updates
+          </p>
+        </div>
+
+        <BlogPage />
+      </section>
     </div>
-  )
+  );
 }
 
 export default Home;

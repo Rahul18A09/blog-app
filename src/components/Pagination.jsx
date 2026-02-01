@@ -19,7 +19,7 @@ if (totalPages === 0) return null;
   };
 
   return (
-    <div className="flex justify-center mt-8 gap-2 flex-wrap">
+    <div className="flex justify-center mt-8  gap-2 flex-wrap">
       {/* Previous Button */}
       <button
         onClick={handlePrevious}

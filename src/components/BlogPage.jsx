@@ -53,7 +53,7 @@ function BlogPage() {
   const categories = ["All", ...new Set(blogs.map((blog) => blog.category))];
 
   return (
-    <div className="p-8 flex flex-wrap justify-evenly">
+    <div className="p-8 flex flex-wrap gap-4 justify-evenly">
       {/* Category Section */}
       <div>
         {" "}

@@ -54,8 +54,9 @@ const Footer = ({ categories = [] }) => {
           <h3 className="text-lg font-semibold text-white mb-4">Quick Links</h3>
           <ul className="space-y-3 text-sm">
             <li><Link to="/" className="hover:text-orange-500 transition">Home</Link></li>
-            <li><Link to="/blogs" className="hover:text-orange-500 transition">Blogs</Link></li>
+            <li><Link to="/services" className="hover:text-orange-500 transition">Serives</Link></li>
             <li><Link to="/about" className="hover:text-orange-500 transition">About</Link></li>
+            <li><Link to="/blogs" className="hover:text-orange-500 transition">Blogs</Link></li>
             <li><Link to="/contact" className="hover:text-orange-500 transition">Contact</Link></li>
           </ul>
         </div>
